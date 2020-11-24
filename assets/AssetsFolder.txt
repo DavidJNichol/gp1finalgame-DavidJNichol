@@ -1,1 +1,15 @@
 Asset Log
+
+-Background PNG
+
+-Block PNG
+
+-Bullet PNG
+
+-Platform PNG
+
+-Side Block PNG
+
+-Beetle PNG
+
+-Character PNG

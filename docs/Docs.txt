@@ -1,0 +1,37 @@
+POC
+
+************************************************************************
+Current Gameplay:
+
+Player spawns at the top and lands on a platform
+
+Player is able to move horizontally and jump
+
+Player is able to shoot bullets infinitely when jumping
+
+Blocks spawn in random locations
+
+Blocks do not spawn inside of each other
+
+Player is able to shoot blocks and destroy them
+
+No levels or monsters in the scene yet
+
+************************************************************************
+
+************************************************************************
+Code Structure:
+Player uses an input state system based on boolean input 
+
+IBreakable interface used on blocks
+
+Jump, shoot and physics all happen in one player class
+
+************************************************************************
+
+************************************************************************
+Maintainability: 
+Code has a foundation for maintainance, but comments are lacking. Classes will have to be broken up into
+several sub classes in the future for more organization. 
+
+************************************************************************

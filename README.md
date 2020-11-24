@@ -1,11 +1,13 @@
 # GameProgrammingFinal
 Game Programming Final Template
 
-Game Name:  
+Game Name: Ultra Fall
+
 Description Short:  
+
 Description Long:
 
-Genre:
+Genre: 2D Platformer
 
 Platform:
 

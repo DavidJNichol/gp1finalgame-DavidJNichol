@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 956467828671620598}
   - component: {fileID: 956467828671620596}
   - component: {fileID: 956467828671620595}
+  - component: {fileID: 7406497630401226892}
   - component: {fileID: 956467828671620594}
   m_Layer: 0
   m_Name: UltraFall Character
@@ -30,7 +31,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 6.62, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
-  m_Children: []
+  m_Children:
+  - {fileID: 7585088937699682303}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 56030e97f1231a1459dff41cf4a8b823, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84becb8cc763c0646b45bb4ec19e1c65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,8 +119,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4cd1476697df84fbee9761307b8870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputSystem: {fileID: 0}
+  playerBottomCollision: {fileID: 0}
   moveVelocity: 115
   jumpForce: 7
+  jumpGravity: 0
+--- !u!114 &7406497630401226892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956467828671620599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb2070412da930488af09faa09abcd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4907809370446391089, guid: 153892f33c4fdc64794014e64575753c,
+    type: 3}
+  allowFire: 1
+  bulletForce: 0.55
+  bulletSpawnOffset: 0.4
+  maxAmmo: 0
+  ammoLeft: {fileID: 0}
 --- !u!61 &956467828671620594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -132,16 +156,85 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.00000009685755}
+  m_Offset: {x: -0.07502434, y: 0.12090729}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.21, y: 0.32}
+    oldSize: {x: 1.92, y: 1.92}
     newSize: {x: 0.21, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.21, y: 0.32000017}
+  m_Size: {x: 0.61115044, y: 1.2234545}
   m_EdgeRadius: 0
+--- !u!1 &8522603702222151856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7585088937699682303}
+  - component: {fileID: 2580304065267049959}
+  - component: {fileID: 5546629022542655476}
+  m_Layer: 0
+  m_Name: BootsCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7585088937699682303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8522603702222151856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.518, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 956467828671620597}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2580304065267049959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8522603702222151856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0175f69c1fb6d24fbee4f54d6dc907c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTouchingGround: 0
+  gems: {fileID: 0}
+  rigidBody: {fileID: 956467828671620596}
+  jumpVector: {x: 0, y: 3.5}
+  jumpForce: 25
+  gemScript: {fileID: 0}
+  gemText: {fileID: 0}
+--- !u!68 &5546629022542655476
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8522603702222151856}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.35153362, y: -0.0075853467}
+  - {x: 0.17570397, y: -0.0073799286}

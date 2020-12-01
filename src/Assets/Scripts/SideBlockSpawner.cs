@@ -10,15 +10,10 @@ public class SideBlockSpawner : MonoBehaviour
 
     private Vector3 position;
 
-    private void Awake()
+    private void Start()
     {
         amountOfBlocks = 500;
         position = this.transform.position;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         SpawnSideBlocks();
     }
 

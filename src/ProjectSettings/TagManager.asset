@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Ground
   - Bullet
+  - Imp
+  - Buggy
+  - BuggyTop
+  - ImpTop
+  - GroundTop
+  - Gem
   layers:
   - Default
   - TransparentFX

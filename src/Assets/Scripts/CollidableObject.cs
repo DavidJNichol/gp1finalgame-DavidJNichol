@@ -29,59 +29,68 @@ public class CollidableObject : MonoBehaviour
     [SerializeField]
     private GemScript gems; // FIND OUT A WAY TO NOT SERIALIZE THIS
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) // Spawn collision for monsters (be careful with this if you decide to make monsters not a trigger)
     {
-        if(sceneObject == Object.Block)  // Block is not a trigger, so we must use collisionenter2d seperately for block on block spawn collision
+        // BUGGY COLLISION 
+        if (sceneObject == Object.Buggy || sceneObject == Object.Imp) // Buggy checks for ground, imp and buggy on spawn
+        {
+            if (collision.gameObject.gameObject.tag == "Ground")
+            {
+                this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound)); // If there is a collision, set a new spawn pos within boundries
+            }
+            if (collision.gameObject.gameObject.tag == "Monster")
+            {
+                this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
+            }
+            //if (collision.gameObject.tag == "Buggy")
+            //{
+            //    this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
+            //}
+        }
+
+        // BLOCK COLLISION
+        if (sceneObject == Object.Block)  // Block is not a trigger, so we must use collisionenter2d seperately for block on block spawn collision
         {
             if (collision.gameObject.GetComponent<Collider2D>().tag == "Ground")// Block checks for ground on spawn
             {
                 this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, -488.21f));
             }
         }
+
+        // IMP COLLISION
+        //if (sceneObject == Object.Imp) // Imp checks for ground, imp on spawn
+        //{
+        //    if (collision.gameObject.gameObject.tag == "Monster")
+        //    {
+        //        this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
+        //    }
+        //    if (collision.gameObject.gameObject.tag == "Ground")
+        //    {
+        //        this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
+        //    }
+        //}
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) // Spawn collision for monsters (be careful with this if you decide to make monsters not a trigger)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(sceneObject == Object.Buggy) // Buggy checks for ground, imp and buggy on spawn
+
+        // BULLET TRIGGER 
+        if(sceneObject == Object.Block || sceneObject == Object.Buggy || sceneObject == Object.Imp)
         {
-            if (collision.gameObject.gameObject.tag == "Ground")
+            if (collision.gameObject.tag == "Bullet")
             {
-                this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound)); // If there is a collision, set a new spawn pos within boundries
-            }
-            if (collision.gameObject.gameObject.tag == "Imp")
-            {
-                this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
-            }
-            if (collision.gameObject.tag == "Buggy")
-            {
-                this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
+                this.gameObject.SetActive(false); // "Destroy" block
+                collision.gameObject.SetActive(false); // sets bullet inactive // Maybe we should move them off the map rather than destroy for performance reasons? 
+
+                if (childClassTransform != null)
+                {
+                    gems.SpawnGems(childClassTransform);
+                }
             }
         }
-
-        if (sceneObject == Object.Imp) // Imp checks for ground, imp on spawn
-        {
-            if (collision.gameObject.gameObject.tag == "Imp")
-            {
-                this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
-            }
-            if (collision.gameObject.gameObject.tag == "Ground")
-            {
-                this.transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
-            }
-        }
-
-        if (collision.gameObject.tag == "Bullet")
-        {
-            this.gameObject.SetActive(false); // "Destroy" block
-            collision.gameObject.SetActive(false); // sets bullet inactive // Maybe we should move them off the map rather than destroy for performance reasons? 
-            
-            if(childClassTransform != null)
-            {
-                 gems.SpawnGems(childClassTransform);
-            }
-        }
-
-        if (sceneObject == Object.Player)
+        
+        // PLAYER TRIGGER 
+        if (sceneObject == Object.Player) // Used for checking the player's feet collider
         {
             if (collision.gameObject.tag == "ImpTop" || collision.gameObject.tag == "BuggyTop")
             {
@@ -102,12 +111,4 @@ public class CollidableObject : MonoBehaviour
             }
         }
     }
-    //private void Update()
-    //{
-    //    if(sceneObject == Object.Player)
-    //    {
-    //        gems.MoveGemsToPlayer(playerPosition);
-    //        Debug.Log(playerPosition);
-    //    }
-    //}
 }

@@ -16,9 +16,6 @@ public class PlayerBottomCollision : CollidableObject
     [SerializeField]
     private Text gemText;
 
-
-
-
     private void Start()
     {
         sceneObject = Object.Player; // From CollidableObject

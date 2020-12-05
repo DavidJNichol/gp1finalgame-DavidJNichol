@@ -11,14 +11,7 @@ public abstract class SpawnableObject : MonoBehaviour
 
     protected int amountOfObjects;
 
-    //protected List<Vector2> positionList;
-
-    //protected void FindNewSpawnPoint(Transform transform)
-    //{
-    //    transform.position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
-    //}
-
-    protected void PopulateScene(GameObject prefab, Transform parentTransform)
+    protected void PopulateScene(GameObject prefab, Transform parentTransform) // Spawn go's on loop, if they collide, find new spawn point
     {
         for (int i = 0; i < amountOfObjects; i++)
         {
@@ -27,23 +20,20 @@ public abstract class SpawnableObject : MonoBehaviour
         }
     }
 
-    protected void SpawnOnBlocks(GameObject prefab, Transform parentTransform, int amountOfBlocks)
+    protected void PopulateIndividual(GameObject prefab, Transform parentTransform) // Spawns go's without loop (used to spawn 2 random types of blocks)
     {
-        List<Vector2> blockList = new List<Vector2>();
-        for(int i = 0; i < amountOfBlocks; i++)
-        {
-            blockList.Add(GameObject.FindGameObjectsWithTag("Ground")[i].transform.position);
-            Instantiate(prefab, blockList[i], Quaternion.identity, parentTransform);
-            
-        }
+        Vector2 position = new Vector2(Random.Range(xMinBound, xMaxBound), Random.Range(yMinBound, yMaxBound));
+        Instantiate(prefab, position, Quaternion.identity, parentTransform);
     }
 
-
-    //protected void SpawnOnBlocks(GameObject prefab, Transform parentTransform, List<Vector2> positionList)
+    //protected void SpawnOnBlocks(GameObject prefab, Transform parentTransform, int amountOfBlocks)
     //{
-    //    for(int i = 0; i < amountOfObjects; i++)
+    //    List<Vector2> blockList = new List<Vector2>();
+    //    for(int i = 0; i < amountOfBlocks; i++)
     //    {
-    //        Instantiate(prefab, positionList[i], Quaternion.identity, parentTransform);
+    //        blockList.Add(GameObject.FindGameObjectsWithTag("Ground")[i].transform.position);
+    //        Instantiate(prefab, blockList[i], Quaternion.identity, parentTransform);
+            
     //    }
     //}
 }

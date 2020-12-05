@@ -17,6 +17,7 @@ public class Shoot : MonoBehaviour
     public float bulletSpawnOffset;
     public int maxAmmo;
     public Text ammoLeft;
+    public GameObject bulletManager; // Used to organize bullets that are spawned
     // ------------------
 
     public bool laser;
@@ -63,14 +64,14 @@ public class Shoot : MonoBehaviour
     private void SpawnBullet()
     {
         UpdateBulletSpawnLocation();
-        GameObject spawnedBullet = GameObject.Instantiate(bulletPrefab, bulletSpawnPos, Quaternion.identity, this.transform);
+        GameObject spawnedBullet = GameObject.Instantiate(bulletPrefab, bulletSpawnPos, Quaternion.identity, bulletManager.transform);
         spawnedBulletList.Add(spawnedBullet);
     }
 
     private void SpawnLaser()
     {
         UpdateBulletSpawnLocation();
-        GameObject spawnedLaser = GameObject.Instantiate(laserPrefab, laserSpawnPos, Quaternion.identity, this.transform);
+        GameObject spawnedLaser = GameObject.Instantiate(laserPrefab, laserSpawnPos, Quaternion.identity, bulletManager.transform);
         spawnedLaserList.Add(spawnedLaser);
     }
 

@@ -37,7 +37,7 @@ public class PlayerInput : MonoBehaviour
     {
         rigidBody = this.GetComponent<Rigidbody2D>();
         //spawnedBulletList = new List<GameObject>();
-        targetVelocity = new Vector2(moveVelocity * 10, rigidBody.velocity.y);
+        targetVelocity = new Vector2(moveVelocity, rigidBody.velocity.y);
         spriteFlipQuaternion = new Quaternion(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z, 1);
         playerBottomCollision = GetComponentInChildren<PlayerBottomCollision>();
     }

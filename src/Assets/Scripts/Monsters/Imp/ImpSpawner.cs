@@ -11,6 +11,6 @@ public class ImpSpawner : SpawnableObject
     public void Start()
     {
         amountOfObjects = 120; // From SpawnableObject
-        SpawnOnBlocks(impPrefab, this.transform, blockSpawner.amountOfBlocks);  // From SpawnableObject
+        PopulateScene(impPrefab, this.transform);  // From SpawnableObject
     }
 }

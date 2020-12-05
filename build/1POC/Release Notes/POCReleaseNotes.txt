@@ -1,0 +1,49 @@
+POC
+
+************************************************************************
+Current Gameplay:
+
+Player spawns at the top and lands on a platform
+
+Player is able to move horizontally and jump
+
+Player is able to shoot bullets infinitely when jumping
+
+Blocks spawn in random locations
+
+Blocks do not spawn inside of each other
+
+Player is able to shoot blocks and destroy them
+
+2 types of monsters spawn randomly without spawning inside each other
+
+Player has an amount of ammo to shoot and reloads when touching a block 
+
+Monsters drop gems on death
+
+Gems lerp to player
+
+Player loses a life when colliding body with a monster
+
+UI elements: Lives, Gems, Ammo
+
+1 power up - Laser that replaces bullets 
+
+************************************************************************
+
+************************************************************************
+Code Structure:
+Player uses an input state system based on boolean input 
+
+IBreakable interface used on blocks
+
+Jump, shoot and physics all happen in one player class
+
+************************************************************************
+
+************************************************************************
+Maintainability: 
+Code has a foundation for maintainance, but comments are lacking. Classes will have to be broken up into
+several sub classes in the future for more organization. 
+
+************************************************************************

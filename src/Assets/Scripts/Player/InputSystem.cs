@@ -30,7 +30,7 @@ public class InputSystem : MonoBehaviour
 
     public bool CheckLeft()
     {
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || Input.GetKey("a"))
         {
             //keyPressed = KeyState.Left;
             return true;
@@ -40,7 +40,7 @@ public class InputSystem : MonoBehaviour
 
     public bool CheckRight()
     {
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || Input.GetKey("d"))
         {
             //keyPressed = KeyState.Right;
             return true;

@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Testing.unity
+    path: Assets/Scenes/UltraFall.unity
     guid: d05c133f557aa8940b821e43d5ed59c0
   m_configObjects: {}

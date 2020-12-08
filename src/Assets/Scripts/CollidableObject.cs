@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CollidableObject : MonoBehaviour
 {
     protected enum Object
-    { 
+    {
         Buggy,
         Imp,
         Block,
@@ -26,8 +24,7 @@ public class CollidableObject : MonoBehaviour
     [HideInInspector]
     public bool isTouchingGround; //  public is bad. must be public bc player input has to access it
 
-    [SerializeField]
-    private GemScript gems; // FIND OUT A WAY TO NOT SERIALIZE THIS
+    public GemScript gems; // FIND OUT A WAY TO NOT SERIALIZE THIS
 
     private void OnCollisionEnter2D(Collision2D collision) // Spawn collision for monsters (be careful with this if you decide to make monsters not a trigger)
     {
@@ -75,7 +72,7 @@ public class CollidableObject : MonoBehaviour
     {
 
         // BULLET TRIGGER 
-        if(sceneObject == Object.Block || sceneObject == Object.Buggy || sceneObject == Object.Imp)
+        if (sceneObject == Object.Block || sceneObject == Object.Buggy || sceneObject == Object.Imp)
         {
             if (collision.gameObject.tag == "Bullet")
             {
@@ -88,7 +85,7 @@ public class CollidableObject : MonoBehaviour
                 }
             }
         }
-        
+
         // PLAYER TRIGGER 
         if (sceneObject == Object.Player) // Used for checking the player's feet collider
         {
@@ -96,7 +93,7 @@ public class CollidableObject : MonoBehaviour
             {
                 //isTouchingGround = true; // Why does this not work?
                 collision.gameObject.transform.parent.gameObject.SetActive(false); // Disables parent, which is the whole object since the top collider is a child
-                gems.SpawnGems(collision.gameObject.transform);
+                gems.SpawnGems(this.transform);
             }
 
             if (collision.gameObject.tag == "GroundTop") // This reloads player's weapon

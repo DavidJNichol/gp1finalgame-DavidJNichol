@@ -14,7 +14,7 @@ public class BlockSpawner : SpawnableObject
         SpawnRandomBlockType();
     }
 
-    private void SpawnRandomBlockType()
+    public void SpawnRandomBlockType()
     {
         for(int i = 0; i < amountOfObjects; i++)
         {

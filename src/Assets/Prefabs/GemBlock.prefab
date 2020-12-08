@@ -149,8 +149,8 @@ GameObject:
   - component: {fileID: 7700363961478835987}
   - component: {fileID: 3871142858323610748}
   - component: {fileID: 5704318008821218054}
+  - component: {fileID: 7653602587298907373}
   - component: {fileID: 923062083888966706}
-  - component: {fileID: -8612127122376637353}
   m_Layer: 0
   m_Name: GemBlock
   m_TagString: Ground
@@ -250,6 +250,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.92, y: 1.9149663}
   m_EdgeRadius: 0
+--- !u!114 &7653602587298907373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765925327127108119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3caa483d52253428bf6f9465e46b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTouchingGround: 0
+  gems: {fileID: 0}
+  isGemBlock: 0
 --- !u!50 &923062083888966706
 Rigidbody2D:
   serializedVersion: 4
@@ -271,18 +286,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &-8612127122376637353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4765925327127108119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5ab3133dff901e44b4c79617f53e3a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTouchingGround: 0
-  gems: {fileID: 0}
-  isGemBlock: 0

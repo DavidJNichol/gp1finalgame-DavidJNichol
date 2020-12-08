@@ -21,14 +21,14 @@ public class Shoot : MonoBehaviour
     // ------------------
 
     public bool laser;
-
+    public InputSystem inputSystem;
     public GameObject laserPrefab;
     private Vector3 laserSpawnPos;
     private List<GameObject> spawnedLaserList;
     public float laserSpawnOffset;
 
 
-    private void Awake()
+    private void Start()
     {
         spawnedBulletList = new List<GameObject>();
         spawnedLaserList = new List<GameObject>();
@@ -39,7 +39,7 @@ public class Shoot : MonoBehaviour
     {
         if (allowFire)
         {
-            if (GetComponent<PlayerInput>().inputSystem.CheckSpacebar() && Time.time > firingTimer)
+            if (inputSystem.CheckFixedUpdateSpaceBar() && Time.time > firingTimer)
             {
                 firingTimer = Time.time + fireDelay;
                 Fire();
@@ -113,6 +113,12 @@ public class Shoot : MonoBehaviour
                 }
             }
         }        
+    }
+
+    public void UpdateAmountOfAmmo(int amount)
+    {
+        maxAmmo = amount;
+        bullets = amount;
     }
 
     private void CheckAmmo()

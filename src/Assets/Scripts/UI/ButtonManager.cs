@@ -7,7 +7,11 @@ public class ButtonManager : MonoBehaviour
 {
     public Text pauseMenu;
     public Shoot playerShoot;
-    int indexer;
+    public GameObject postGame;
+
+    public LevelManager levelManager;
+
+    public LivesManager livesManager;
 
     public void ExitGame()
     {
@@ -22,11 +26,42 @@ public class ButtonManager : MonoBehaviour
 
     public void ToggleLaser()
     {
-        if(indexer %2 == 0)
+        playerShoot.laser = true;
+        levelManager.ResetLevel();
+        postGame.SetActive(false);
+    }
+
+    public void ToggleLaser(bool status)
+    {
+        if (status)
             playerShoot.laser = true;
         else
             playerShoot.laser = false;
 
-        indexer++;
+        levelManager.ResetLevel();
+        postGame.SetActive(false);
+    }
+
+    public void SetLives()
+    {
+        livesManager.UpdateAmountOfLives(15);
+        levelManager.ResetLevel();
+        postGame.SetActive(false);
+    }
+    public void SetLives(int amount)
+    {
+        livesManager.UpdateAmountOfLives(amount);
+    }
+
+    public void SetAmmo()
+    {
+        playerShoot.UpdateAmountOfAmmo(13);
+        levelManager.ResetLevel();
+        postGame.SetActive(false);
+    }
+    
+    public void SetAmmo(int amount)
+    {
+        playerShoot.UpdateAmountOfAmmo(amount);
     }
 }

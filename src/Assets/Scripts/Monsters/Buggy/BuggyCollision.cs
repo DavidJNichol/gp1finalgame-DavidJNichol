@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuggyCollision : CollidableObject
 {
+    public GameObject player;
     private void Start()
     {
         childClassTransform = this.transform;

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GemScript : MonoBehaviour
 {
     public GameObject gemPrefab;
     private List<GameObject> gemList;
     public float lerpSpeed;
+    public bool reset;
+    public Text gemText;
 
     private float xScale = .3f;
     private float yScale = .4f;
@@ -41,5 +44,10 @@ public class GemScript : MonoBehaviour
                 gem.transform.position = Vector2.Lerp(gem.transform.position, playerPosition, lerpSpeed); // Lerp Gems to player when they are spawned
             }
         }        
+    }
+
+    public void SetGemAmount(int amount)
+    {
+        gemText.text = $"{amount}";
     }
 }

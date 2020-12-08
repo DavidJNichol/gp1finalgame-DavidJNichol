@@ -19,6 +19,14 @@ public class InputSystem : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if(!CheckNone())
+        {
+            CheckFixedUpdateSpaceBar();
+        }
+    }
+
     public bool CheckSpacebar()
     {
         if (Input.GetKey("space"))
@@ -50,9 +58,16 @@ public class InputSystem : MonoBehaviour
 
     public bool CheckNone()
     {
-        if (!Input.GetKey("space") && !Input.GetKey("left") && !Input.GetKey("right"))
+        if (!CheckSpacebar() && !CheckRight() && !CheckLeft())
+            return true;
+        else
+            return false;
+    }
+
+    public bool CheckFixedUpdateSpaceBar()
+    {
+        if (Input.GetKey("space"))
         {
-            //keyPressed = KeyState.None;
             return true;
         }
         return false;

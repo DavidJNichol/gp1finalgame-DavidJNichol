@@ -13,8 +13,7 @@ public class PlayerBottomCollision : CollidableObject
     private float jumpForce; // Magnitude of jump
     [SerializeField]
     private GemScript gemScript;
-    [SerializeField]
-    private Text gemText;
+
 
     private void Start()
     {
@@ -38,6 +37,10 @@ public class PlayerBottomCollision : CollidableObject
     private void Update()
     {
         gemScript.MoveGemsToPlayer(this.transform.position); // Gems must collide with player bottom in order to disappear. Fix this - needs to be a collision (not trigger) with player main collider
-        gemText.text = gemsCollected.ToString();
+        if(gemScript.reset)
+        {
+            gemsCollected = 0;
+        }
+        gemScript.gemText.text = gemsCollected.ToString();
     }
 }

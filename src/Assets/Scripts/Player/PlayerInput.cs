@@ -29,6 +29,8 @@ public class PlayerInput : MonoBehaviour
     private Vector2 jumpVector = new Vector2(0, .5f); // Used to apply force in the up direction
     public float jumpForce; // Magnitude of jump
     public float jumpGravity; // How much you will be pulled down when you reach a max y speed threshold
+    private int maxPositiveVerticalSpeed = 4;
+    private int maxNegativeVerticalSpeed = -15;
     // ------------------
 
     Quaternion spriteFlipQuaternion;
@@ -77,93 +79,21 @@ public class PlayerInput : MonoBehaviour
 
     private void ControlSpeed()
     {
-        if (rigidBody.velocity.y > 4)
+        if (rigidBody.velocity.y > maxPositiveVerticalSpeed)
         {
-            rigidBody.AddForce(new Vector2(0, -jumpGravity));
+            rigidBody.AddForce(new Vector2(0, -jumpGravity)); // Jumping control
+        }
+        if(rigidBody.velocity.y < maxNegativeVerticalSpeed)
+        {
+            rigidBody.AddForce(new Vector2(0, jumpGravity)); // Falling control
         }
     }
     // ----------------------------------
-
-
-    // SHOOT ----------------------------
-    //private void HandleShoot()
-    //{
-    //    if(allowFire)
-    //    {
-    //        if (inputSystem.CheckSpacebar() && Time.time > firingTimer)
-    //        {
-    //            firingTimer = Time.time + fireDelay;
-    //            Shoot();
-    //        }
-    //    }       
-    //} 
-
-    //private void Shoot()
-    //{
-    //    SpawnBullet();
-    //    bullets--; // Decrease player ammo left
-    //}
-
-    //private void SpawnBullet()
-    //{
-    //    UpdateBulletSpawnLocation();
-    //    GameObject spawnedBullet = GameObject.Instantiate(bulletPrefab, bulletSpawnPos, Quaternion.identity, this.transform); 
-    //    spawnedBulletList.Add(spawnedBullet);
-    //}
-
-    //private void UpdateBulletSpawnLocation()
-    //{
-    //    bulletSpawnPos.x = this.transform.position.x;
-    //    bulletSpawnPos.y = this.transform.position.y - bulletSpawnOffset; // Bullet starts .5 units below the player before moving
-    //}
-
-    //private void MoveBullets()
-    //{
-    //    if(spawnedBulletList != null)
-    //    {
-    //        for (int i = 0; i < spawnedBulletList.Count; i++)
-    //        {
-    //            if(spawnedBulletList[i] != null)
-    //                spawnedBulletList[i].transform.position += new Vector3(0, -bulletForce, 0); // Move bullet by a scale of bulletForce on the y on Update.
-    //        }
-    //    }
-    //}
-
-    //private void CheckAmmo()
-    //{
-    //    if(bullets <= 0)
-    //    {
-    //        bullets = 0;
-    //        allowFire = false;
-    //    }
-    //    if(playerBottomCollision.isTouchingGround)
-    //    {
-    //        allowFire = true;
-    //        bullets = 5;
-    //    }
-    //}
-
-    // ----------------------------------
-
-
 
     private void FixedUpdate()
     {
         ControlSpeed();
         HandleHorizontalInput();
         HandleJump();
-        //MoveBullets();
     }
-
-   
-    // Old firing timer ------
-
-    //firingTimer -= Time.deltaTime;
-    //if (firingTimer <= 0)
-    //{
-    //    SpawnBullet();
-    //    firingTimer += fireDelay; // Delay = time between shots, firingTimer is set to 0
-    //}
-
-    // Old firing timer ------
 }

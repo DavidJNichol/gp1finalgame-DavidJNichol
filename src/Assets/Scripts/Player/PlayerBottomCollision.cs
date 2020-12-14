@@ -17,7 +17,7 @@ public class PlayerBottomCollision : CollidableObject
 
     private void Start()
     {
-        sceneObject = Object.Player; // From CollidableObject
+        sceneObject = SpawnedObjectType.Player; // From CollidableObject
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -36,11 +36,13 @@ public class PlayerBottomCollision : CollidableObject
 
     private void Update()
     {
-        gemScript.MoveGemsToPlayer(this.transform.position); // Gems must collide with player bottom in order to disappear. Fix this - needs to be a collision (not trigger) with player main collider
+        gemScript.MoveGemsToPlayer(this.transform.position); // Gems must collide with player bottom in order to disappear. Fix this - needs to be a collision (not trigger) with player main collider               
+
         if(gemScript.reset)
         {
             gemsCollected = 0;
         }
+
         gemScript.gemText.text = gemsCollected.ToString();
     }
 }

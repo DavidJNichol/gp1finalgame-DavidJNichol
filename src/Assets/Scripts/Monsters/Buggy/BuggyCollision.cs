@@ -8,6 +8,6 @@ public class BuggyCollision : CollidableObject
     private void Start()
     {
         childClassTransform = this.transform;
-        sceneObject = Object.Buggy; // From CollidableObject
+        sceneObject = SpawnedObjectType.Buggy; // From CollidableObject
     }
 }

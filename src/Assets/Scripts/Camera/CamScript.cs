@@ -1,20 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CamScript : MonoBehaviour
 {
     public GameObject player;
-
-    private Vector3 camPosition;
-
+    public Vector3 camPosition;
     private Vector3 playerPosition;
+
+    public bool followX;
 
     // Start is called before the first frame update
     void Start()
     {        
         camPosition = playerPosition;
-
         camPosition.z -= 10;
     }
 
@@ -23,6 +20,21 @@ public class CamScript : MonoBehaviour
     {
         playerPosition = player.transform.position;
         camPosition.y = playerPosition.y;
+        if (followX)
+        {
+            camPosition.x = playerPosition.x;
+            this.GetComponent<Camera>().fieldOfView = 120;            
+        }
+        else
+        {
+            this.GetComponent<Camera>().fieldOfView = 65;
+        }
         this.transform.position = camPosition;
+    }
+
+    public void ResetPosition()
+    {
+        camPosition.x = 0;
+        this.GetComponent<Camera>().fieldOfView = 65;
     }
 }

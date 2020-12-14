@@ -8,7 +8,7 @@ public class BuggySpawner : SpawnableObject
 
     public void Start()
     {
-        amountOfObjects = 120; // From SpawnableObject
+        amountOfObjects = 80; // From SpawnableObject
         PopulateScene(buggyPrefab, this.transform);  // From SpawnableObject
     }
 }

@@ -9,7 +9,7 @@ public class BlockSpawner : SpawnableObject
 
     void Start()
     {
-        amountOfObjects = 120;
+        amountOfObjects = 100;
 
         SpawnRandomBlockType();
     }

@@ -8,7 +8,7 @@ public class BlockCollision : CollidableObject
 
     private void Start()
     {
-        sceneObject = Object.Block;
+        sceneObject = SpawnedObjectType.Block;
 
         if(isGemBlock)
         {

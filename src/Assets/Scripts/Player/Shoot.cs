@@ -10,7 +10,8 @@ public class Shoot : MonoBehaviour
     private Vector3 bulletSpawnPos; // Location on bullet instantiation
     private List<GameObject> spawnedBulletList; // List of bullets spawned and in the scene
     public bool allowFire = true; // Does the player have ammunition left?
-    private int bullets; // Magazine capacity
+    [HideInInspector]
+    public int bullets; // Magazine capacity
     private float fireDelay = .15f; // Delay between bullets
     private float firingTimer; // Timer used in shooting fire rate
     public float bulletForce; // Bullet speed on spawn
@@ -26,6 +27,8 @@ public class Shoot : MonoBehaviour
     private Vector3 laserSpawnPos;
     private List<GameObject> spawnedLaserList;
     public float laserSpawnOffset;
+    public AudioSource shootSound;
+    public AudioSource laserSound;
 
 
     private void Start()
@@ -52,10 +55,12 @@ public class Shoot : MonoBehaviour
         if (laser)
         {
             SpawnLaser();
+            laserSound.Play();
         }
         else
         {
             SpawnBullet();
+            shootSound.Play();
         }
 
         bullets--; // Decrease player ammo left
@@ -128,9 +133,12 @@ public class Shoot : MonoBehaviour
             bullets = 0;
             allowFire = false;
         }
-        if (GetComponent<PlayerInput>().playerBottomCollision.isTouchingGround)
+        else
         {
             allowFire = true;
+        }
+        if (GetComponent<PlayerInput>().playerBottomCollision.isTouchingGround)
+        {
             bullets = maxAmmo;
         }
     }

@@ -12,12 +12,10 @@ Game Programming Final Template
 ## Platform: Windows
 
 ## Credits:
-```
 Monster and player sprites made by my brother 
 **Jay Draper**. (Link to Jay's Facebook: *https://www.facebook.com/jay.draper1*) All other sprites by me.
 Laser sound by **Mason Alberts**<
 All other sounds from > *https://splice.com/*
-```
 
 ## Folder Sturcture --------------------------------------------------
 

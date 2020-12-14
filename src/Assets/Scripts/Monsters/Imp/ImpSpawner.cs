@@ -10,7 +10,7 @@ public class ImpSpawner : SpawnableObject
 
     public void Start()
     {
-        amountOfObjects = 120; // From SpawnableObject
+        amountOfObjects = 80; // From SpawnableObject
         PopulateScene(impPrefab, this.transform);  // From SpawnableObject
     }
 }

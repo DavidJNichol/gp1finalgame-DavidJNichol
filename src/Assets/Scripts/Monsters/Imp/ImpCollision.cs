@@ -7,7 +7,7 @@ public class ImpCollision : CollidableObject
     private void Start()
     {
         childClassTransform = this.transform;
-        sceneObject = Object.Imp;
+        sceneObject = SpawnedObjectType.Imp;
     }
 
 

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
@@ -10,7 +8,6 @@ public class ButtonManager : MonoBehaviour
     public GameObject postGame;
 
     public LevelManager levelManager;
-
     public LivesManager livesManager;
 
     public void ExitGame()
@@ -27,41 +24,68 @@ public class ButtonManager : MonoBehaviour
     public void ToggleLaser()
     {
         playerShoot.laser = true;
-        levelManager.ResetLevel();
+        AdvanceLevel();
         postGame.SetActive(false);
     }
 
-    public void ToggleLaser(bool status)
+    public void ToggleLaser(bool status) // power up laser toggle
     {
         if (status)
             playerShoot.laser = true;
         else
             playerShoot.laser = false;
 
-        levelManager.ResetLevel();
+        AdvanceLevel();
         postGame.SetActive(false);
     }
 
-    public void SetLives()
+    public void SetLives() // Lives power up
     {
-        livesManager.UpdateAmountOfLives(15);
-        levelManager.ResetLevel();
+        livesManager.UpdateAmountOfLives(15); 
+        AdvanceLevel();
         postGame.SetActive(false);
     }
-    public void SetLives(int amount)
+    public void SetLives(int amount) // Custom set lives
     {
         livesManager.UpdateAmountOfLives(amount);
     }
 
-    public void SetAmmo()
+    public void SetAmmo() // Ammo power up
     {
         playerShoot.UpdateAmountOfAmmo(13);
-        levelManager.ResetLevel();
+        AdvanceLevel();
         postGame.SetActive(false);
     }
     
-    public void SetAmmo(int amount)
+    public void SetAmmo(int amount) // Custom set ammo
     {
         playerShoot.UpdateAmountOfAmmo(amount);
+    }
+
+    public void Restart() // on death
+    {
+        levelManager.StartNewGame();
+        Time.timeScale = 1;
+    }
+
+    public void ResetLevel() // pause menu version
+    {
+        levelManager.ResetLevel();
+        Time.timeScale = 1;
+    }
+
+    public void SetBossFightActive() // pause menu skip to boss fight
+    {
+        levelManager.level = 3;
+        levelManager.StartBossLevel();
+        Time.timeScale = 1;
+    }
+
+    private void AdvanceLevel()
+    {
+        if (levelManager.level == 3)
+            levelManager.StartBossLevel();
+        else
+            levelManager.ResetLevel();
     }
 }

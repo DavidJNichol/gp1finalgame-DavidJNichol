@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BlockCollision" Collapsed="true">
+    <Position X="7.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Blocks\BlockCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockSpawner" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Blocks\BlockSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SideBlockSpawner" Collapsed="true">
+    <Position X="23.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAgAAAAAgAAIAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Blocks\SideBlockSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BossFightBlockCollision" Collapsed="true">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Boss Fight\BossFightBlockCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BossFightBlockMovement" Collapsed="true">
+    <Position X="20.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Boss Fight\BossFightBlockMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BossFightBlockSpawner" Collapsed="true">
+    <Position X="22" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBIAAAASAAAAAIAAQBAAAAAAAAAAAAACAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Boss Fight\BossFightBlockSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BossFightMonsterSpawner" Collapsed="true">
+    <Position X="23.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIQASAAABAIAgAAAAAAAACAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Boss Fight\BossFightMonsterSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BossFightPlayerBoundry" Collapsed="true">
+    <Position X="16.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Boss Fight\BossFightPlayerBoundry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BossScript" Collapsed="true">
+    <Position X="18.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQIAAAIAiAQACAAAAAAAAAAAEIAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Boss Fight\BossScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CamScript" Collapsed="true">
+    <Position X="16.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACCAAAAAAAAAAACAAAAAAAAEBAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\Camera\CamScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStartNotifier" Collapsed="true">
+    <Position X="18.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAIIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\GameStartNotifier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GemScript" Collapsed="true">
+    <Position X="20.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACcAQAAEAKAAAAAAAAAACACAAAAAAAAAAEAAwgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\GemScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelManager" Collapsed="true">
+    <Position X="23.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBIAAAAACAkIAAAAQCIABAAAKEAQAABAIAACAgAAgA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\LevelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LivesManager" Collapsed="true">
+    <Position X="16.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAACAAAAAAAAAAAABAAAAAAkAAEAIAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager\LivesManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AIMovement" Collapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQIAAAAAAAAAAAACAAAIAAAAAAAAQABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monsters\AIMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuggyCollision" Collapsed="true">
+    <Position X="12" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monsters\Buggy\BuggyCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuggySpawner" Collapsed="true">
+    <Position X="14.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monsters\Buggy\BuggySpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ImpCollision" Collapsed="true">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Monsters\Imp\ImpCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ImpSpawner" Collapsed="true">
+    <Position X="12" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Assets\Scripts\Monsters\Imp\ImpSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="22" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputSystem" Collapsed="true">
+    <Position X="22" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAAgAAAAQAAAAAIAAAAgAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\InputSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerBottomCollision" Collapsed="true">
+    <Position X="14.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAQCAACAAAAAAAAAAAAACAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerBottomCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerInput" Collapsed="true">
+    <Position X="22" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAQCoQiAEAAAAAAAAEgAAACAEAECAAAgAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMainCollision" Collapsed="true">
+    <Position X="23.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAACAQAAAAAAAAAEAAQAAAAAAgwAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerMainCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shoot" Collapsed="true">
+    <Position X="22" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MCQABwADYqAAQEAAAACAAgIAEAAEAgAABBAABQkAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Shoot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BottomBoundryCollider" Collapsed="true">
+    <Position X="20.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneObjects\BottomBoundryCollider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlatformCollision" Collapsed="true">
+    <Position X="20.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneObjects\PlatformCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Portal" Collapsed="true">
+    <Position X="16.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAAAAAAAAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneObjects\Portal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PortalCollider" Collapsed="true">
+    <Position X="18.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneObjects\PortalCollider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneRespawner" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAcAAgACBCAAAEAAMAAAAAAAAAAAAAAEAAAAABACA=</HashCode>
+      <FileName>Assets\Scripts\SceneObjects\SceneRespawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollidableObject" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAGAIAQAAAAAAEAACBAAIAAEAAAAAAAIAgAGAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Super Classes\CollidableObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpawnableObject" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAGAAAAAAAAAEAAAAAABAAAAAAAAAAAAAAAGAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Super Classes\SpawnableObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonManager" Collapsed="true">
+    <Position X="23.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAAABAAABAEAAAAQAIAAAQAAEAQAAAAgAACAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\UI\ButtonManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseMenu" Collapsed="true">
+    <Position X="18.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PostGame" Collapsed="true">
+    <Position X="20.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAAAEAIAACCAAAAAAAAIAAgAQAgAAAEEAUMAAIAAIAI=</HashCode>
+      <FileName>Assets\Scripts\UI\PostGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ISpawnable" Collapsed="true">
+    <Position X="16.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interfaces\ISpawnable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

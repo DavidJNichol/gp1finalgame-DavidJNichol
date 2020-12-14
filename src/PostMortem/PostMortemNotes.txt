@@ -1,0 +1,23 @@
+What dependencies does your game have how did you handle them?
+UltraFall is not tied to any external Unity packages or assets from the store. In code, almost none of the scripts use any extra libraries other than UnityEngine. In the way that I built the code, many of the classes rely on data and methods from each other, such as CollidableObject relying on Gemscript in order to spawn gems on collision. I understand that's pretty bad but its apart of my technical debt. 
+
+How did your class/components design work out? What would you change if you could start over?
+I wanted to implement strategy pattern but that didn't work so well, since it wasn't really helping anything organization wise. This was probably because I was using it for the wrong things (ISpawnable on a super class SpawnableObject, but I couldn't figure out how to make it so ISpawnable wasn't heavy weight since each spawnable object had very different features.) If I got to go back, I would make the game less ambitious and focus more on the strategy pattern and apply it in the right way.  
+
+Rate how reusable the game codebase is? What percentage is specific to the game? What percentage is specific to the platform (monogame/unity)?
+I would say 90% of my code is specific to unity, since a lot of the scripts rely on prefabs and other unity functions such as instantiate.
+
+How maintainable is your code? Is it easy to add more enemies, pickups, weapons, levels etc?
+My code started off as maintainable, and even quite reusable, but after POC I had to start rushing things. Some things in my scripts right now rely on their own methods, such as The final boss, but some things are able to be switched around. Things like blocks and different types of weapons are pretty easy to implement which is what I did for gem blocks and the laser power up.
+ 
+Did you finish your game?
+Yup, aside from the credits screen and a win screen.
+
+How did the scope match up with the proposal and allotted time.
+Well structure of code wise, things had to be rushed at the end so the scope of that was overly ambitious. Implementing those scripts and the look and feel of the game are on par with what I wanted in the amount of time. 
+
+If you didn't finish what's left todo?
+credits screen and a win screen, clean up code and implement some smarter code patterns
+
+If you could redo the proposal what would you change?
+I would probably take out the boss level and spend some more time making the movement feel better.
